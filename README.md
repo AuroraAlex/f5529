@@ -16,17 +16,17 @@ unsigned char disp3[]={0x80+14,0x80+15,0x80+16,':',0};
 
 加上0x80表示汉字，不是汉字则不用加，每行一0结尾哦
 再在需要显示的地方加上函数：
-  PrintString(3*8,0,disp0);
-  PrintString(0*8,2,disp1);
-  PrintString(0*8,4,disp2);
-  PrintString(0*8,6,disp3);
+  PrintString(3\*8,0,disp0);
+  PrintString(0\*8,2,disp1);
+  PrintString(0\*8,4,disp2);
+  PrintString(0\*8,6,disp3);
   因为8个col表示一个汉字，起始col为第三个汉字的位置，起始page为第一行所以为0。
   非汉字则所有字模都在asciifonts.h，去掉0x80其他使用方法一样。
   
   
   print_number(uchar col,uchar page,unsigned int a)函数使用方法：
   例：
-  print_number(11*8,2,DHT11T_Data_H);
+  print_number(11\*8,2,DHT11T_Data_H);
   col、page和上面一样，最后一个参数直接输入变量或常量即可
   
   关于system_init
@@ -44,7 +44,7 @@ unsigned char disp3[]={0x80+14,0x80+15,0x80+16,':',0};
   
   关于clock
   //DCO频率范围在28.2MHZ以下//D=16，N=1//n=8,FLLREFCLK时钟源为XT2CLK；
-  //DCOCLK=D*(N+1)*(FLLREFCLK/n);DCOCLKDIV=(N+1)*(FLLREFCLK/n);
+  //DCOCLK=D\*(N+1)\*(FLLREFCLK/n);DCOCLKDIV=(N+1)*(FLLREFCLK/n);
   //ACLK的时钟源为DCOCLKDIV,MCLK\SMCLK的时钟源为DCOCLK
   //ACLK由DCOCLKDIV的32分频得到，SMCLK由DCOCLK的2分频得到
   //最终MCLK:16MHZ,SMCLK:8MHZ,ACLK:32KHZ
